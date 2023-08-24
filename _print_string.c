@@ -8,11 +8,17 @@
 
 int print_string(va_list ls)
 {
-	char *p;
-	int p_len;
+	char *strg = va_arg(ls, char*);
+	int i;
 
-	p = va_arg(ls, char*);
-	p_len = print((p != NULL) ? p : "(null)");
+	for (i = 0; strg[i] != '\0'; i++)
+	{
+		if (strg[i] < 32 || strg[i] >= 127)
+			_printf("\\x%02X", strg[i]);
+		else
+			_printf("%c", strg[i]);
+	}
 
+	
 	return (p_len);
 }
