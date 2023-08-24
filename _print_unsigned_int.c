@@ -10,11 +10,11 @@
 int print_unsigned(va_list ls)
 {
 	char *pt;
-	int i;
+	int sz;
+	unsigned int num = va_arg(ls, unsigned int);
 
-	pt = int_asc(va_arg(ls, unsigned int), 10);
+	pt = int_asc(num, 10);
+	sz = print((pt != NULL) ? pt : "NULL");
 
-	i = print((pt != NULL) ? pt : "NULL");
-
-	return (i);
+	return (sz);
 }

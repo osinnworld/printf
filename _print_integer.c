@@ -9,11 +9,12 @@
 int print_integer(va_list ls)
 {
 	char *pt;
-	int i;
+	int sz;
+	int num = va_arg(ls, int);
 
-	pt = int_asc(va_arg(ls, int), 10);
+	pt = int_asc(num, 10);
 
-	i = print((pt != NULL) ? pt : "NULL");
+	sz = print((pt != NULL) ? pt : "NULL");
 
-	return (i);
+	return (sz);
 }
