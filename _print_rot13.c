@@ -38,12 +38,12 @@ int rot13(char *s)
  */
 int print_rot(va_list ls)
 {
-	int p_len;
-	char *p;
+	int i;
+	char *pt;
 
-	p = va_arg(ls, char *);
-	p_len = rot13((p != NULL) ? p : "(nehy)");
+	pt = va_arg(ls, char *);
+	i = rot13((pt != NULL) ? pt : "(nehy)");
 
-	return (p_len);
+	return (i);
 }
 

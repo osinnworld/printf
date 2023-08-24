@@ -1,23 +1,48 @@
 #include "main.h"
-#include <stdio.h>
+
+/**
+ * print_pointer - prints no. to hexadecimal
+ * @ls: parameter
+ *
+ * Return: length
+ */
 
 int print_pointer(va_list ls)
 {
-	int len;
-	char *strg = va_arg(ls, char*);
-	char *hex_strg;
+	int j;
+	char *pt;
 
-	hex_strg = int_asc((unsigned long)str, 16);
+	pt = int_asc(va_args(ls, unsigned long int), 16);
 
-	if (str == NULL)
-	{
-		len = print("(nil)");
-	}
+	if (!_strgcmp(pt, "0"))
+		return (print("(nil)"));
+
+	j = print("0x");
+
+	if (!_strgcmp(pt, "-1"))
+		j += print(" ");
 	else
+		j += print(pt);
+
+	return (j);
+}
+
+/**
+ * _strcmp - compare 2 strgs
+ * @s1: strg 1
+ * @s2: strg 2
+ *
+ * Return: int
+ */
+int _strcmp(char *s1, char *s2)
+{
+	int i;
+
+	for (i = 0; s1[i] != '\0'; i++)
 	{
-		len = print("0x");
-		len += print(hex_strg);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 	}
 
-	return (len);
+	return (0);
 }

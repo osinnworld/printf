@@ -8,12 +8,12 @@
  */
 int print_hexadec_low(va_list ls)
 {
-	char *prt_buff;
-	int sz;
+	char *pt;
+	int i;
 
-	prt_buff = int_asc(va_arg(ls, unsigned int), 16);
+	pt = int_asc(va_arg(ls, unsigned int), 16);
 
-	sz = print((prt_buff != NULL) ? prt_buff : "NULL");
+	i = print((pt != NULL) ? pt : "NULL");
 
-	return (sz);
+	return (i);
 }

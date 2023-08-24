@@ -11,7 +11,7 @@ char *int_asc(long int num, int base)
 {
 	static char buffer[50];
 	static char *array = "0123456789abcdef";
-	char *ptr;
+	char *pt;
 	char sg = 0;
 	unsigned long x = num;
 
@@ -20,15 +20,15 @@ char *int_asc(long int num, int base)
 		x = -num;
 		sg = '-';
 	}
-	ptr = &buffer[49];
-	*ptr = '\0';
+	pt = &buffer[49];
+	*pt = '\0';
 
 	do	{
-		*--ptr = array[x % base];
+		*--pt = array[x % base];
 		x /= base;
 	} while (x != 0);
 
 	if (sg)
-		*--ptr = sg;
-	return (ptr);
+		*--pt = sg;
+	return (pt);
 }

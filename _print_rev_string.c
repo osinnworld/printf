@@ -9,15 +9,15 @@
 
 int print_rev_string(va_list ls)
 {
-	const char *str;
+	const char *strg;
 	int i, sz;
 
-	str = va_arg(ls, const char *);
+	strg = va_arg(ls, const char *);
 
-	sz = _strlen(str);
+	sz = _strlen(strg);
 
 	for (i = sz - 1; i >= 0; i--)
-		_putchar(str[i]);
+		_putchar(strg[i]);
 
 	return (sz);
 }

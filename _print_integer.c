@@ -8,12 +8,12 @@
  */
 int print_integer(va_list ls)
 {
-	char *prt_buff;
-	int sz;
+	char *pt;
+	int i;
 
-	prt_buff = int_asc(va_arg(ls, int), 10);
+	pt = int_asc(va_arg(ls, int), 10);
 
-	sz = print((prt_buff != NULL) ? prt_buff : "NULL");
+	i = print((pt != NULL) ? pt : "NULL");
 
-	return (sz);
+	return (i);
 }

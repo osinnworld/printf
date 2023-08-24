@@ -1,8 +1,5 @@
 #include "main.h"
 
-int is_lowercase(char);
-char *string_to_upper(char *);
-
 /**
  * print_hexadec_upp - print a number in hexadecimal
  * @ls: no. to print
@@ -12,15 +9,15 @@ char *string_to_upper(char *);
 
 int print_hexadec_upp(va_list ls)
 {
-	char *prt_buff;
-	int sz;
+	char *pt;
+	int i;
 
-	prt_buff = int_asc(va_arg(ls, unsigned int), 16);
-	prt_buff = string_to_upper(prt_buff);
+	pt = int_asc(va_arg(ls, unsigned int), 16);
+	pt = string_to_upper(pt);
 
-	sz = print((prt_buff != NULL) ? prt_buff : "NULL");
+	i = print((pt != NULL) ? pt : "NULL");
 
-	return (sz);
+	return (i);
 }
 
 /**

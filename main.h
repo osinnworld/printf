@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 int _printf(const char *format, ...);
 
@@ -40,5 +41,9 @@ int handler(const char *, va_list);
 int print(char *);
 int _strlen(const char *);
 char *int_asc(long int, int);
+char *string_to_upper(char *);
+int is_lowercase(char);
+int _strgcmp(char *, char *);
+int rot13(char *);
 
 #endif
