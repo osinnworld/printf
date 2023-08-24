@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-int _printf(const char *format, ...);
+int printf(const char *format, ...);
 
 /**
  * struct _format - data type def

@@ -6,7 +6,7 @@
  *
  * Return: no. of printed chars
  */
-int _printf(const char *format, ...)
+int printf(const char *format, ...)
 {
 	va_list args;
 	int sz;
