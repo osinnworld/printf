@@ -6,7 +6,7 @@
  *
  * Return: length
  */
-
+int _strgcmp(char *, char *);
 int print_pointer(va_list ls)
 {
 	int j;
@@ -34,7 +34,7 @@ int print_pointer(va_list ls)
  *
  * Return: int
  */
-int _strcmp(char *s1, char *s2)
+int _strgcmp(char *s1, char *s2)
 {
 	int i;
 
