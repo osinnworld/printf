@@ -20,5 +20,5 @@ int print_string(va_list ls)
 	}
 
 	
-	return (p_len);
+	return (i);
 }
