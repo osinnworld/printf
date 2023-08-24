@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-int printf(const char *format, ...);
+int _printf(const char *format, ...);
 
 /**
  * struct _format - data type def
@@ -19,7 +19,7 @@ typedef struct _format
 	int (*f)(va_list);
 } format;
 
-int putchar(char);
+int _putchar(char);
 int buffer(char);
 
 int print_integer(va_list);
@@ -35,7 +35,7 @@ int print_pointer(va_list);
 int print_rev_string(va_list);
 
 int percent_handler(const char *, va_list, int *);
-int handler(const char *format, ...);
+int handler(const char *, va_list);
 
 int print(char *);
 int _strlen(const char *);

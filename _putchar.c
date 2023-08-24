@@ -8,7 +8,7 @@
  */
 int _putchar(char ch)
 {
-	return (buffer(c));
+	return (buffer(ch));
 }
 
 /**
@@ -20,14 +20,16 @@ int _putchar(char ch)
 int buffer(char ch)
 {
 	static int i;
-	static char buffrg[1024]
+	static char buff[1024];
+
+	if (ch == -1 || i == 1024)
 	{
-		write(1, buffrg, i);
+		write(1, buff, i);
 		i = 0;
 	}
 
 	if (ch != -1)
-		buffrg[i++] = ch;
+		buff[i++] = ch;
 
 	return (1);
 }

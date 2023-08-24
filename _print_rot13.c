@@ -6,7 +6,7 @@
  *
  * Return: strg
  */
-int_rot13(char *s)
+int rot13(char *s)
 {
 	char *normal, *rot13;
 	int j, i;

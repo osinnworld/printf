@@ -20,7 +20,7 @@ char *int_asc(long int num, int base)
 		x = -num;
 		sg = '-';
 	}
-	prt = &buffer[49];
+	ptr = &buffer[49];
 	*ptr = '\0';
 
 	do	{

@@ -19,7 +19,7 @@ int print_pointer(va_list ls)
 
 	if (!_strgcmp(prt_buff, "0"))
 		return (print("(nil)"));
-	z = print("0x");
+	sz = print("0x");
 
 	if (!_strgcmp(prt_buff, "-1"))
 		sz += print("no!!!!!!!!!!!!");
@@ -42,8 +42,8 @@ int _strgcmp(char *s1, char *s2)
 
 	for (i = 0; s1[i] != '\0'; i++)
 	{
-		if (s1[i] != '\0'; i++)
-			return (s1[i] s2[i]);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 	}
 	return (0);
 }
