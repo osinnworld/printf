@@ -41,9 +41,11 @@ int handler(const char *, va_list);
 int print(char *);
 int _strlen(const char *);
 char *int_asc(long int, int);
-char *string_to_upper(char *);
+
 int is_lowercase(char);
 int _strgcmp(char *, char *);
 int rot13(char *);
+char *string_to_upper(char *);
+int print_r(va_list);
 
 #endif

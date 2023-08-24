@@ -9,9 +9,9 @@
  */
 int handler(const char *str, va_list ls)
 {
-	int sz, i, ax;
+	int i, s, ax;
 
-	sz = 0;
+	s = 0;
 	for (i = 0; str[i] != 0; i++)
 	{
 		if (str[i] == '%')
@@ -20,14 +20,14 @@ int handler(const char *str, va_list ls)
 			if (ax == -1)
 				return (-1);
 
-			sz += ax;
+			s += ax;
 			continue;
 		}
 		_putchar(str[i]);
-		sz += 1;
+		s += 1;
 	}
 
-	return (sz);
+	return (s);
 }
 
 /**
@@ -40,7 +40,7 @@ int handler(const char *str, va_list ls)
  */
 int percent_handler(const char *str, va_list ls, int *i)
 {
-	int sz, j, no_fmts;
+	int s, j, no_fmts;
 	format formats[] = {
 		{'c', print_char}, {'s', print_string},
 		{'o', print_octal}, {'b', print_binary},
@@ -62,12 +62,12 @@ int percent_handler(const char *str, va_list ls, int *i)
 	}
 
 	no_fmts = sizeof(formats) / sizeof(formats[0]);
-	for (sz = j = 0; j < no_fmts; j++)
+	for (s = j = 0; j < no_fmts; j++)
 	{
 		if (str[*i] == formats[j].type)
 		{
-			sz = formats[j].f(ls);
-			return (sz);
+			s = formats[j].f(ls);
+			return (s);
 		}
 	}
 

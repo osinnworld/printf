@@ -6,7 +6,6 @@
  *
  * Return: length
  */
-
 int print_hexadec_upp(va_list ls)
 {
 	char *pt;

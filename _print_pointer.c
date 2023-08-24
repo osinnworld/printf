@@ -12,7 +12,7 @@ int print_pointer(va_list ls)
 	int j;
 	char *pt;
 
-	pt = int_asc(va_args(ls, unsigned long int), 16);
+	pt = int_asc(va_arg(ls, unsigned long int), 16);
 
 	if (!_strgcmp(pt, "0"))
 		return (print("(nil)"));

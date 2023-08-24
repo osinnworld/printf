@@ -8,23 +8,23 @@
  */
 int rot13(char *s)
 {
-	char *normal, *rot13;
+	char *nm, *rot13;
 	int j, i;
 
 	rot13 = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	normal = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	nm = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
 	for (i = 0; s[i] != '\0'; j++)
 	{
-		for (j = 0; normal[j] != '\0'; j++)
+		for (j = 0; nm[j] != '\0'; j++)
 		{
-			if (s[i] == normal[j])
+			if (s[i] == nm[j])
 			{
 				_putchar(rot13[j]);
 				break;
 			}
 		}
-		if (!normal[j])
+		if (!nm[j])
 			_putchar(s[i]);
 	}
 	return (i);
