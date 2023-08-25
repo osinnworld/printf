@@ -12,14 +12,11 @@ int print_integer(va_list ls)
 	int sz;
 
 	int num = va_arg(ls, int);
-	char sign = (value < 0) ? '-' : '+';
+	char sign = (num < 0) ? '-' : '+';
 
 	pt = int_asc(num, 10);
 
-	if
-	{
-		sz = _putchar(sign);
-	}
+	sz = (num >= 0) ? _putchar(sign) : 0;
 
 	sz += print((pt != NULL) ? pt : "NULL");
 

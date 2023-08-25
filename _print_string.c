@@ -10,9 +10,9 @@ int print_string(va_list ls)
 	char *p;
 	int p_len = 0;
 	char fmt_str[5];
-	
+
 	p = va_arg(ls, char*);
-	
+
 	if (p == NULL)
 	{
 		p = "(null)";
