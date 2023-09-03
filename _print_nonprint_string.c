@@ -1,57 +1,77 @@
 #include "main.h"
 
 /**
- * print_nonprint_string -  prints strg w/ chars \x
- * @args: parameter
+ * print_nonprint_string - prints strg
+ * @args: va_list of args
  *
- * Return: no. of chars
+ * Return: no. of char
  */
 int print_nonprint_string(va_list args)
 {
 	int len = 0;
 	char *str = va_arg(args, char *);
+	int i;
 
 	if (!str)
 		return (_puts("(null)"));
 
-	for (int 1 = 0; str[i]; i++)
+	for (i = 0; str[i]; i++)
 	{
-		if (is_nonprintable(str[i]))
+		if (is_non_alpanumeric(str[i]))
 		{
-			len += _putchar('\\');
-			len += _putchar('x');
-			len += print_hex_digit((str[i] >> 4) & 0xF);
-			len += print_hex_digit(str[i] & 0xF);
-		};
-		else
-		{
-			len += _puchar(str[i]);
+			len += _puts("\\x");
+			char *hex = convert_hex(str[i], 0);
+
+			if (!hex[1])
+				len += _putchar('0');
+
+			len += _puts(hex);
 		}
+			else
+			{
+				len += _putchar(str[i]);
+			}
 	}
 
 	return (len);
 }
 
 /**
- * is_nonprintable - checks if char is nonprintable
- * @c: char to be checked
+ * is_non_alphanumeric - checks if char is non-alphanumeric
+ * @c: char to check
  *
- * Return: 0 or 1
+ * Return: 1 or 0
  */
-int is_nonprintable(char c)
+int is_non_alphanumeric(char c)
 {
-	return (c < 32 || c >= 127);
+	return ((c > 0 && c < 32) || c >= 127);
 }
 
 /**
- * print_hex_digit - prints hexadecimal digit
- * @digit: 0-15 to print
+ * convert_hex - converts no. to hex
+ * @num: parameters
+ * @lower:parameter
  *
- * Return: always 1
+ * Return: pointer
  */
-int print_hex_digit(int digit)
+char *convert_hex(unsigned long int num, int lower)
 {
-	char hex_chars[] = "0123456789ABCDEF";
+	static char *hex_digits = "0123456789ABCDEF";
+	static char buffer[50];
+	char *pt;
 
-	return (_putchar(hex_chars[digits]));
+	if (lower)
+		hex_digits = "0123456789abcdef";
+
+	pt = &buffer[49];
+	*pt = '\0';
+
+	do {
+		*--pt = hex_digits[num % 16];
+		num /= 16;
+	} while (num);
+
+	return (pt);
 }
+
+

@@ -8,6 +8,8 @@
 #include <string.h>
 
 int _printf(const char *format, ...);
+unsigned int get_base_length(unsigned int num, int base);
+format_parser(format, funcs, arg_list);
 
 /**
  * struct _format - data type def
@@ -22,7 +24,7 @@ typedef struct _format
 } format;
 
 int _putchar(char);
-int _puts(char *);
+int _puts(char *str);
 int buffer(char);
 
 int print_integer(va_list);
