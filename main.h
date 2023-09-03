@@ -22,6 +22,7 @@ typedef struct _format
 } format;
 
 int _putchar(char);
+int _puts(char *);
 int buffer(char);
 
 int print_integer(va_list);
@@ -48,5 +49,9 @@ int _strgcmp(char *, char *);
 int rot13(char *);
 char *string_to_upper(char *);
 int print_r(va_list);
+
+int print_nonprint_strint(va_list);
+int is_nonprintable(char);
+int print_hex_digit(int);
 
 #endif
